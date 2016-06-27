@@ -1,0 +1,118 @@
+/**
+ * [description]   @xianfei for  hg homepage  css 
+ * @AuthorHTL                                  xianfei
+ * @DateTime    2016-06-27T11:18:18+0800
+ * @description
+ */
+
+/*common css start*/
+html, body {
+	height: 100%;
+}
+.disNon {
+	display: none;
+}
+
+/*common css end*/
+
+/*mui & webui 兼容性bug解决*/
+.ui-load-main {
+	box-sizing: content-box;
+}
+
+/*mui & webui 兼容性bug解决*/
+
+/*JS_STEP_1 start*/
+#JS_STEP_1 {
+	width: 100%;
+}
+#JS_STEP_2 {
+	width: 100%;
+	background-color: orange;
+	min-height: 80%;
+}
+#JS_STEP_3 {
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+	display: none;
+}
+#JS_STEP_4 {
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+	display: none;
+}
+#JS_STEP_5 {
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+	display: none;
+}
+#JS_STEP_6 {
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+	display: none;
+}
+#head {
+	height: 50px;
+	background-color: #000;
+	text-align: center;
+}
+#head span {
+	color: #fff;
+	font-size: 15px;
+	font-family: "PingFang";
+	line-height: 3;
+	margin-left: 20px;
+}
+#head img {
+	float: right;
+	margin-right: 20px;
+	margin-top: 14px;
+}
+#popover {
+	background-color: #000;
+	width: 30%;
+	opacity: 0.5;
+	position: fixed;
+	right: 10px;
+	top: 71px;
+}
+#popover a {
+	color: #fff;
+}
+#popover li {
+	text-align: center;
+}
+
+.popover-arrow{
+		    left: 248px;
+		    right: 6px;
+			    overflow: hidden;
+    width: 26px;
+    height: 26px;
+	    position: absolute;
+    z-index: 1000;
+    top: -25px;
+	    overflow: hidden;
+    width: 26px;
+    height: 26px;
+}
+
+.popover-arrow:after {
+       position: absolute;
+    top: -13px;
+    left: 46px;
+    width: 25px;
+    height: 26px;
+    content: ' ';
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 3px;
+    background: #f7f7f7;
+}
+
+
+/*JS_STEP_1 end*/
