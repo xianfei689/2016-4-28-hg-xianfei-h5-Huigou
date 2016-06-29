@@ -119,6 +119,7 @@ html, body {
 #login1 {
 	background-image: url(../img/home/2.png);
 	background-size: contain;
+	    background-repeat: no-repeat;
 }
 #login3 {
 	background-image: url(../img/home/bg2.png);
