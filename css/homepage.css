@@ -309,9 +309,9 @@ html, body {
 	background-color: #1F1E24;
 }
 #login5 .lg5bg1 {
-	width: 80%;
-	margin-top: 42px;
-	margin-bottom: 25px;
+	    width: 80%;
+    margin-top: 37px;
+    margin-bottom: 25px;
 }
 #login5 .lg5bg2 {
 	margin-top: 15px;
@@ -344,12 +344,10 @@ html, body {
 	text-indent: 20px;
 }
 #login6 .lg6mg1 {
-	background-size: 100% 100%;
-	position: relative;
-	width: 100%;
-	height: 88%;
-	left: 0px;
-	top: -51px;
+	background-size: cover;
+    position: relative;
+    left: 0px;
+    top: -51px;
 }
 .lg6_cont img {
 	height: 21px;
