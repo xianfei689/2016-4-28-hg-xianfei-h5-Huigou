@@ -31,12 +31,12 @@ define(function(require, exports, module) {
 				if (status) {
 					var template = Handlebars.compile(html);
 					$("#JS_STEP_1").html(template());
-					$("#showPop").unbind().bind('click', function() {
+					$("#showPop").unbind().bind('touchstart', function() {
 						$("#popover").toggle();
 					});
 
 					$(".table-view").find("li").each(function(index, ele) {
-						$(this).unbind().bind("click", function() {
+						$(this).unbind().bind("touchstart", function() {
 							$("#iSlider-wrapper").hide();
 							$("#popover").slideUp();
 							load.start();
