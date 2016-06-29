@@ -35,6 +35,16 @@ define(function(require, exports, module) {
 						$("#popover").toggle();
 					});
 
+					$(".table-view").find("li").each(function(index, ele) {
+						$(this).unbind().bind("click", function() {
+							$("#iSlider-wrapper").hide();
+							$("#popover").slideUp();
+							load.start();
+							home._init_homedesc_loadcont(index);
+						});
+					});
+
+
 				};
 			});
 
@@ -70,22 +80,19 @@ define(function(require, exports, module) {
 
 
 															$("#JS_STEP_1").show();
-															var list = [
-																// HTML String
-																{
-																	content: html1
-																}, {
-																	content: html2
-																}, {
-																	content: html3
-																}, {
-																	content: html4
-																}, {
-																	content: html5
-																}, {
-																	content: html6
-																}
-															];
+															var list = [{
+																content: html1
+															}, {
+																content: html2
+															}, {
+																content: html3
+															}, {
+																content: html4
+															}, {
+																content: html5
+															}, {
+																content: html6
+															}];
 
 															var S = new iSlider({
 																dom: document.getElementById('iSlider-wrapper'),
@@ -94,7 +101,13 @@ define(function(require, exports, module) {
 																isLooping: 1,
 																isOverspread: 1,
 																animateTime: 800,
-																isVertical: true
+																isVertical: true,
+																onslide: function() {
+																	if (!$("#popover").is(":hidden")) {
+																		$("#popover").slideUp();
+																	}
+
+																}
 															});
 
 															load.done();
@@ -120,7 +133,38 @@ define(function(require, exports, module) {
 
 
 		},
+		/**
+		 * [_init_homedesc_loadcont description]
+		 * @AuthorHTL                                  xianfei
+		 * @DateTime    2016-06-29T09:46:03+0800
+		 * @description  加载子页面的  方法
+		 * @param       {[type]}                 index [description]
+		 * @return      {[type]}                       [description]
+		 */
+		_init_homedesc_loadcont: function(index) {
+			index == undefined ? (index = 0) : ('');
 
+			//这个逻辑 判断模块元素是否加载过模板[如果加载过,那么只要进行显示隐藏控制;如果没有,那么加载]
+			if ($(".Stepcont").eq(index).html() != "") {
+				$(".Stepcont").hide().eq(index).show();
+				$("body").css("overflow","auto");
+				load.done();
+			} else {
+				var htmlStr = "tpl/homepage-desc-cont" + index + ".tpl";
+				
+				Rose.ajax.getHtml(htmlStr, function(html, status) {
+					if (status) {
+						var template1 = Handlebars.compile(html);
+						$(".Stepcont").hide().eq(index).html(template1(index)).show();
+						$("body").css("overflow","auto");
+						load.done();
+					};
+				});
+			}
+
+
+
+		}
 
 	};
 
