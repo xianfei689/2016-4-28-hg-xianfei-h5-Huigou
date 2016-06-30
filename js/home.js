@@ -144,22 +144,81 @@ define(function(require, exports, module) {
 		_init_homedesc_loadcont: function(index) {
 			index == undefined ? (index = 0) : ('');
 
+
+
+			$("#back").css("visibility", "visible").unbind().bind("touchstart", function() {
+				$(".Stepcont").hide().eq(index).hide();
+				$("#iSlider-wrapper").show();
+			});
+
 			//这个逻辑 判断模块元素是否加载过模板[如果加载过,那么只要进行显示隐藏控制;如果没有,那么加载]
 			if ($(".Stepcont").eq(index).html() != "") {
 				$(".Stepcont").hide().eq(index).show();
-				$("body").css("overflow","auto");
+				$("body").css("overflow", "auto");
 				load.done();
 			} else {
-				var htmlStr = "tpl/homepage-desc-cont" + index + ".tpl";
+				if (index == 0) {
+					Rose.ajax.getJson("json/news.json",'',function(json,status){
+						console.log(json);
+						
+					});
+
+
+
+					mui.init({
+						pullRefresh: {
+							container: '#pullrefresh',
+							up: {
+								contentrefresh: '正在加载...',
+								callback: pullupRefresh
+							}
+						}
+					});
 				
-				Rose.ajax.getHtml(htmlStr, function(html, status) {
-					if (status) {
-						var template1 = Handlebars.compile(html);
-						$(".Stepcont").hide().eq(index).html(template1(index)).show();
-						$("body").css("overflow","auto");
-						load.done();
-					};
-				});
+					var count = 0;
+					/**
+					 * 上拉加载具体业务实现
+					 */
+					function pullupRefresh() {
+						setTimeout(function() {
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+							var table = document.body.querySelector('.mui-table-view');
+							var cells = document.body.querySelectorAll('.mui-table-view-cell');
+							for (var i = cells.length, len = i + 20; i < len; i++) {
+								var li = document.createElement('li');
+								li.className = 'mui-table-view-cell';
+								li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+								table.appendChild(li);
+							}
+						}, 1500);
+					}
+					if (mui.os.plus) {
+						mui.plusReady(function() {
+							setTimeout(function() {
+								mui('#pullrefresh').pullRefresh().pullupLoading();
+							}, 1000);
+
+						});
+					} else {
+						mui.ready(function() {
+							mui('#pullrefresh').pullRefresh().pullupLoading();
+						});
+					}
+					$("#pullrefresh").show();
+					load.done();
+				}else{
+
+					var htmlStr = "tpl/homepage-desc-cont" + index + ".tpl";
+
+					Rose.ajax.getHtml(htmlStr, function(html, status) {
+						if (status) {
+							var template1 = Handlebars.compile(html);
+							$(".Stepcont").hide().eq(index).html(template1(index)).show();
+							$("body").css("overflow", "auto");
+							load.done();
+						};
+					});
+				}
 			}
 
 

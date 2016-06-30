@@ -1,7 +1,10 @@
 <header id="head">
+	<span id="back">
+		<img src="img/home/left.png">
+		<span>返回</span>
+	</span>
 	<span class="title">汇购科技</span>
 	<img src="img/home/1.png" id="showPop"></header>
-
 <!--右上角弹出菜单-->
 <div id="popover" class="mpopover">
 	<div id="triangle-up"></div>
