@@ -62,7 +62,7 @@
 	</div>
 
 
-	<div class="new_ct">
+	<div class="new_ct ct_last">
 		<div class="new_left">
 			<img src="img/homedesc/com/ro.png" class="new_img">
 			<img src="img/homedesc/com/vline1.png" class="new_img1">
@@ -83,7 +83,6 @@
 
 </div>
 
-<img src="img/homedesc/product/navi.png">
 
 <div class="new_bot">
 	<span class="bt_hover"><<首页</span><span  class="bt_hover bt_t1"><上一页</span><span class="bt_t2">第1页</span><span class="bt_hover">下一页></span>

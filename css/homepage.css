@@ -621,7 +621,7 @@ body {
     margin-left: 74px;
     bottom: 21px;
     position: relative;
-    border-bottom: 1px dashed #000;
+    border-bottom: 1px dashed #454545;
 }
 .new_cont .new_year {
     font-size: 8px;
@@ -668,4 +668,20 @@ body {
 }
 .new_cont .right_last{
 	border-bottom: none;
+}
+.ct_last{
+	border-bottom: 1px dashed #7B7B7B;
+}
+.new_bot{
+	    text-align: center;
+    margin: 19px auto;
+    font-size: 10px;
+    color: #48deb2;
+}
+.new_bot .bt_t2{
+	color: #454545;
+	margin:  0 15px;
+}
+.new_bot .bt_hover{
+	margin-right: 10px;
 }
