@@ -613,35 +613,36 @@ body {
 }
 
 .new_ct{
-	    margin-top: 46px;
+	      margin-top: 26px;
+    margin-left: 25px;
 }
 .new_cont .new_right {
-        width: 77%;
+        width: 73%;
     margin-left: 74px;
     bottom: 21px;
     position: relative;
     border-bottom: 1px dashed #000;
 }
 .new_cont .new_year {
- font-size: 8px;
+    font-size: 8px;
     position: relative;
     bottom: 14px;
-    left: 17px;
+    left: 0px;
 }
 .new_cont .new_day {
     font-size: 25px;
     position: relative;
-    top: 9px;
-    right: 8px;
+    top: 13px;
+    left: -24px;
 }
 .new_cont .new_img{
-	    position: absolute;
-    left: 37px;
+    position: absolute;
+    left: 27px;
     top: -23px;
 }
 .new_img1{
-     position: absolute;
-    left: 46px;
+      position: absolute;
+    left: 35px;
     top: -5px;
 }
 .new_cont .news_t {
@@ -664,4 +665,7 @@ body {
     margin-top: 10px;
     margin-bottom: 17px;
     color: #48deb2;
+}
+.new_cont .right_last{
+	border-bottom: none;
 }
