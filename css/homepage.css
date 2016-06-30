@@ -331,12 +331,12 @@ html, body {
 	margin-bottom: 11px;
 }
 #login6 .lg6_cont {
-	position: absolute;
-	background-color: #fff;
-	bottom: 9%;
-	width: 100%;
-	padding-left: 15px;
-	padding-bottom: 0px;
+    position: absolute;
+    background-color: #fff;
+    bottom: 6%;
+    width: 100%;
+    padding-left: 15px;
+    padding-bottom: 10px;
 }
 #login6 .lg6_cont1 {
 	margin-bottom: 16px;
