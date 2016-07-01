@@ -38,6 +38,7 @@ define(function(require, exports, module) {
 					$(".table-view").find("li").each(function(index, ele) {
 						$(this).unbind().bind("touchstart", function() {
 							$("#iSlider-wrapper").hide();
+							$("#pullrefresh").hide();
 							$("#popover").slideUp();
 							load.start();
 							home._init_homedesc_loadcont(index);
@@ -148,7 +149,9 @@ define(function(require, exports, module) {
 
 			$("#back").css("visibility", "visible").unbind().bind("touchstart", function() {
 				$(".Stepcont").hide().eq(index).hide();
+				$("#pullrefresh").hide();
 				$("#iSlider-wrapper").show();
+
 			});
 
 			//这个逻辑 判断模块元素是否加载过模板[如果加载过,那么只要进行显示隐藏控制;如果没有,那么加载]
@@ -158,55 +161,86 @@ define(function(require, exports, module) {
 				load.done();
 			} else {
 				if (index == 0) {
-					Rose.ajax.getJson("json/news.json",'',function(json,status){
+					$(".Stepcont").hide();	
+					Rose.ajax.getJson("json/news.json", '', function(json, status) {
 						console.log(json);
-						
-					});
-
-
-
-					mui.init({
-						pullRefresh: {
-							container: '#pullrefresh',
-							up: {
-								contentrefresh: '正在加载...',
-								callback: pullupRefresh
+						var intr = false;
+						var newsLen = json.news.length;
+						var count = 0;
+						mui.init({
+							pullRefresh: {
+								container: '#pullrefresh',
+								up: {
+									contentrefresh: '正在加载...',
+									callback: pullupRefresh
+								}
 							}
-						}
-					});
-				
-					var count = 0;
-					/**
-					 * 上拉加载具体业务实现
-					 */
-					function pullupRefresh() {
-						setTimeout(function() {
-							mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
-							var table = document.body.querySelector('.mui-table-view');
-							var cells = document.body.querySelectorAll('.mui-table-view-cell');
-							for (var i = cells.length, len = i + 20; i < len; i++) {
-								var li = document.createElement('li');
-								li.className = 'mui-table-view-cell';
-								li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
-								table.appendChild(li);
-							}
-						}, 1500);
-					}
-					if (mui.os.plus) {
-						mui.plusReady(function() {
+						});
+
+						var count = 0;
+						var change = 0;
+
+						/**
+						 * 上拉加载具体业务实现
+						 */
+						function pullupRefresh() {
 							setTimeout(function() {
-								mui('#pullrefresh').pullRefresh().pullupLoading();
-							}, 1000);
 
-						});
-					} else {
-						mui.ready(function() {
-							mui('#pullrefresh').pullRefresh().pullupLoading();
-						});
-					}
-					$("#pullrefresh").show();
-					load.done();
-				}else{
+								var table = document.body.querySelector('.mui-table-view');
+								var cells = document.body.querySelectorAll('.mui-table-view-cell');
+								if (!change) {
+									change++;
+									$(table).append('<div class="titile"><img src="img/home/green-line.png" class="section2-line "><p class="title-one">新闻中心</p><p class="title-two ">NEWS CENTER</p></div><div id="pullImg"><img src="img/home/up.png" class="up-img"><p class="lg1_ct5">上拉更精彩</p></div>');
+									
+								}
+								for (var i = cells.length, len = i + 3; i < len; i++) {
+
+									if (count < newsLen) {
+										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">'
+										+'<span class="new_year">'+json.news[count].month+'</span>'
+										+'<span class="new_day">'+json.news[count].day+'</span></div><div class="new_right">'
+										+'<p class="news_t">'+json.news[count].titile+'</p>'
+										+'<p class="news_day">'+json.news[count].from+'</p>'
+										+'<p class="news">'+json.news[count].cont+'</p>'
+										+'<a class="readAll" href="'+json.news[count].url+'">阅读全文</a></div></div>';
+										$(table).append(html);
+
+										intr = false;
+										if (count == newsLen - 1)
+											intr = true;
+
+									} else {
+										intr = true;
+									}
+									count++;
+								}
+
+								if (intr) 
+									$("#pullImg").hide();
+								mui('#pullrefresh').pullRefresh().endPullupToRefresh((intr)); //参数为true代表没有更多数据了。	
+
+							}, 1500);
+						}
+						if (mui.os.plus) {
+							mui.plusReady(function() {
+								setTimeout(function() {
+									mui('#pullrefresh').pullRefresh().pullupLoading();
+								}, 1000);
+
+							});
+						} else {
+							mui.ready(function() {
+								mui('#pullrefresh').pullRefresh().pullupLoading();
+							});
+						}
+						$("#pullrefresh").show();
+						load.done();
+
+					});
+
+
+
+				} else {
 
 					var htmlStr = "tpl/homepage-desc-cont" + index + ".tpl";
 

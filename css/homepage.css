@@ -167,7 +167,7 @@ html, body {
 }
 .lg1_ct5 {
 	position: absolute;
-	bottom: 66px;
+    bottom: 56px;
 	width: 100%;
 	color: #48deb2;
 	font-size: 10px;
@@ -207,6 +207,7 @@ html, body {
 }
 .titile {
 	text-align: center;
+    padding-bottom: 6px;
 }
 .section2-line {
 	margin: 0 auto;
@@ -620,7 +621,7 @@ body {
 .join-cont3 .jc3img2{
 	margin-top: 10px;
 }
-.new_cont .new_left {
+.new_ct .new_left {
     float: left;
     position: relative;
 }
@@ -629,26 +630,26 @@ body {
 	      margin-top: 26px;
     margin-left: 25px;
 }
-.new_cont .new_right {
+.new_ct .new_right {
         width: 73%;
     margin-left: 74px;
     bottom: 21px;
     position: relative;
     border-bottom: 1px dashed #454545;
 }
-.new_cont .new_year {
+.new_ct .new_year {
     font-size: 8px;
     position: relative;
     bottom: 14px;
     left: 0px;
 }
-.new_cont .new_day {
+.new_ct .new_day {
     font-size: 25px;
     position: relative;
     top: 13px;
     left: -24px;
 }
-.new_cont .new_img{
+.new_ct .new_img{
     position: absolute;
     left: 27px;
     top: -23px;
@@ -658,28 +659,28 @@ body {
     left: 35px;
     top: -5px;
 }
-.new_cont .news_t {
+.new_ct .news_t {
     font-size: 12px;
     color: #454545;
     font-weight: bold;
 }
-.new_cont .news_day {
+.new_ct .news_day {
     color: #6e6e6e;
     font-size: 9px;
     margin-top: 5px;
 }
-.new_cont .news {
+.new_ct .news {
     color: #454545;
     font-size: 10px;
     margin-top: 11px;
 }
-.new_cont .readAll {
+.new_ct .readAll {
     font-size: 9px;
     margin-top: 10px;
     margin-bottom: 17px;
     color: #48deb2;
 }
-.new_cont .right_last{
+.new_ct .right_last{
 	border-bottom: none;
 }
 .ct_last{
@@ -702,4 +703,21 @@ body {
 #pullrefresh{
 	display: none;
 	margin-top: 55px;
+}
+#pullrefresh .up-img {
+    position: absolute;
+    bottom: 32px;
+    left: 47%;
+    width: 20px;
+}
+#pullrefresh .lg1_ct5 {
+     position: absolute;
+    bottom: -3px;
+    width: 100%;
+    color: #48deb2;
+    font-size: 10px;
+    text-align: center;
+}
+#pullrefresh .new_ct:last-child{
+	padding-bottom: 30px;	
 }
