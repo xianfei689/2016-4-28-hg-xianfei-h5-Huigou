@@ -788,3 +788,7 @@ body {
 	-webkit-animation-name: bounceInUp;
 	animation-name: bounceInUp
 }
+
+#login2 .lg2_cont{
+	display: none;
+}

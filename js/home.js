@@ -117,6 +117,7 @@ define(function(require, exports, module) {
 																	/*alert(1111);*/
 																},
 																onslidechange: function(idx) {
+																	$("#login2").find(".lg2_cont").hide();	
 																	setTimeout(_load_animate_cavans(idx),1000);
 																}
 															});
@@ -383,10 +384,14 @@ function _load_animate_cavans(idx) {
 				setTimeout(function() {
 					$footer.removeClass('bounceInUp animated infinite');
 				}, 1000000);
-				$img.addClass('rotateIn animated');
-				setTimeout(function() {
-					$img.removeClass('rotateIn animated');
-				}, 1000);
+				setTimeout(function(){
+					$("#login2").find(".lg2_cont").show();
+					$img.addClass('rotateIn animated');
+					setTimeout(function() {
+						$img.removeClass('rotateIn animated');
+					}, 1000);
+				},1000);
+				
 				break;
 			};
 		case 2:
