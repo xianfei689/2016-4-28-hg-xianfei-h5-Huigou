@@ -79,8 +79,11 @@ define(function(require, exports, module) {
 															var template3 = Handlebars.compile(html5);
 															html5 = template3(8);
 
-
 															$("#JS_STEP_1").show();
+															load.done();
+															//加入css动画
+
+
 															var list = [{
 																content: html1
 															}, {
@@ -107,11 +110,23 @@ define(function(require, exports, module) {
 																	if (!$("#popover").is(":hidden")) {
 																		$("#popover").slideUp();
 																	}
+																	//bounceInLeft animated infinite
 
+																},
+																onslideend: function(idx) {
+																	/*alert(1111);*/
+																},
+																onslidechange: function(idx) {
+																	setTimeout(_load_animate_cavans(idx),1000);
 																}
 															});
+															/*var $animate = $('#login1').find(".ani_ct1");
+															$animate.addClass('bounceInLeft animated');
+															setTimeout(function() {
+																$animate.removeClass('bounceInLeft animated');
+															}, 1000);*/
+															setTimeout(_load_animate_cavans(0),1000);
 
-															load.done();
 
 														};
 													});
@@ -145,12 +160,13 @@ define(function(require, exports, module) {
 		_init_homedesc_loadcont: function(index) {
 			index == undefined ? (index = 0) : ('');
 
-
+			$("#back").show();
 
 			$("#back").css("visibility", "visible").unbind().bind("touchstart", function() {
 				$(".Stepcont").hide().eq(index).hide();
 				$("#pullrefresh").hide();
 				$("#iSlider-wrapper").show();
+				$("#back").hide();
 
 			});
 
@@ -161,7 +177,7 @@ define(function(require, exports, module) {
 				load.done();
 			} else {
 				if (index == 0) {
-					$(".Stepcont").hide();	
+					$(".Stepcont").hide();
 					Rose.ajax.getJson("json/news.json", '', function(json, status) {
 						console.log(json);
 						var intr = false;
@@ -191,20 +207,13 @@ define(function(require, exports, module) {
 								if (!change) {
 									change++;
 									$(table).append('<div class="titile"><img src="img/home/green-line.png" class="section2-line "><p class="title-one">新闻中心</p><p class="title-two ">NEWS CENTER</p></div><div id="pullImg"><img src="img/home/up.png" class="up-img"><p class="lg1_ct5">上拉更精彩</p></div>');
-									
+
 								}
 								for (var i = cells.length, len = i + 3; i < len; i++) {
 
 									if (count < newsLen) {
-										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">'
-										+'<span class="new_year">'+json.news[count].month+'</span>'
-										+'<span class="new_day">'+json.news[count].day+'</span></div><div class="new_right">'
-										+'<p class="news_t">'+json.news[count].titile+'</p>'
-										+'<p class="news_day">'+json.news[count].from+'</p>'
-										+'<p class="news">'+json.news[count].cont+'</p>'
-										+'<a class="readAll" href="'+json.news[count].url+'">阅读全文</a></div></div>';
+										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">' + '<span class="new_year">' + json.news[count].month + '</span>' + '<span class="new_day">' + json.news[count].day + '</span></div><div class="new_right">' + '<p class="news_t">' + json.news[count].titile + '</p>' + '<p class="news_day">' + json.news[count].from + '</p>' + '<p class="news">' + json.news[count].cont + '</p>' + '<a class="readAll" href="' + json.news[count].url + '">阅读全文</a></div></div>';
 										$(table).append(html);
-
 										intr = false;
 										if (count == newsLen - 1)
 											intr = true;
@@ -215,7 +224,7 @@ define(function(require, exports, module) {
 									count++;
 								}
 
-								if (intr) 
+								if (intr)
 									$("#pullImg").hide();
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((intr)); //参数为true代表没有更多数据了。	
 
@@ -334,3 +343,55 @@ function getTitleInfo(data) {
 	}
 }
 /*common  method end*/
+
+/**
+ * [_load_animate_cavans description]
+ * @AuthorHTL                                xianfei
+ * @DateTime    2016-07-01T14:34:25+0800
+ * @description [description]	  滑动首页的时候定义动画效果
+ * @param       {[type]}                 idx [description]
+ * @return      {[type]}                     [description]
+ */
+function _load_animate_cavans(idx) {
+
+	switch (Number(idx)) {
+		case 0:
+			{
+				var $footer = $("#login1").find(".footer_up");	
+				var $animate = $('#login1').find(".ani_ct1");
+				$footer.addClass('bounceInUp animated infinite');
+				setTimeout(function() {
+					$animate.removeClass('bounceInUp animated infinite');
+				}, 2000);
+				$animate.addClass('bounceInLeft animated ');
+				setTimeout(function() {
+					$animate.removeClass('bounceInLeft animated');
+				}, 1000);
+				break;
+			};
+
+		case 1:
+			{
+				break;
+			};
+		case 2:
+			{
+				break;
+			};
+		case 3:
+			{
+				break;
+			};
+		case 4:
+			{
+				break;
+			};
+		default:
+			{
+				break;
+			};
+	}
+
+
+
+}
