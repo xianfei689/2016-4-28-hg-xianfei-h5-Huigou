@@ -718,7 +718,7 @@ body {
 #pullrefresh .new_ct:last-child {
 	padding-bottom: 30px;
 }
-#login1 .footer_up {
+ .footer_up {
 	-webkit-animation-duration: 2s;
 	-webkit-animation-delay: .2s;
 	-webkit-animation-timing-function: ease;

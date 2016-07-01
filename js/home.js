@@ -361,21 +361,38 @@ function _load_animate_cavans(idx) {
 				var $animate = $('#login1').find(".ani_ct1");
 				$footer.addClass('bounceInUp animated infinite');
 				setTimeout(function() {
-					$animate.removeClass('bounceInUp animated infinite');
-				}, 2000);
-				$animate.addClass('bounceInLeft animated ');
+					$footer.removeClass('bounceInUp animated infinite');
+				}, 1000000);
+				$animate.addClass('bounceInLeft animated');
 				setTimeout(function() {
 					$animate.removeClass('bounceInLeft animated');
-				}, 1000);
+				}, 2000);
 				break;
 			};
 
 		case 1:
 			{
+				var $cont  = $("#login2").find(".titile");
+				var $footer = $('#login2').find(".footer_up");
+				var $img = $("#login2").find(".lg2_ani_ct1");
+				$cont.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$cont.removeClass('bounceInLeft animated');
+				}, 1000);
+				$footer.addClass('bounceInUp animated infinite');
+				setTimeout(function() {
+					$footer.removeClass('bounceInUp animated infinite');
+				}, 1000000);
+				$img.addClass('rotateIn animated');
+				setTimeout(function() {
+					$img.removeClass('rotateIn animated');
+				}, 1000);
 				break;
 			};
 		case 2:
 			{
+
+
 				break;
 			};
 		case 3:
