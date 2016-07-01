@@ -166,7 +166,7 @@ html, body {
 }
 .lg1_ct5 {
 	position: absolute;
-	bottom: 56px;
+	bottom: 77px;
 	width: 100%;
 	color: #48deb2;
 	font-size: 10px;
@@ -226,7 +226,7 @@ html, body {
 }
 #iSlider-wrapper  .up-img {
 	position: absolute;
-	bottom: 91px;
+	bottom: 110px;
 	left: 47%;
 	width: 20px;
 }
@@ -719,19 +719,19 @@ body {
 	padding-bottom: 30px;
 }
  .footer_up {
-	-webkit-animation-duration: 2s;
+	-webkit-animation-duration: 1.5s;
 	-webkit-animation-delay: .2s;
 	-webkit-animation-timing-function: ease;
 	-webkit-animation-fill-mode: both;
-	-moz-animation-duration: 2s;
+	-moz-animation-duration: 1.5s;
 	-moz-animation-delay: .2s;
 	-moz-animation-timing-function: ease;
 	-moz-animation-fill-mode: both;
-	-ms-animation-duration: 2s;
+	-ms-animation-duration: 1.5s;
 	-ms-animation-delay: .2s;
 	-ms-animation-timing-function: ease;
 	-ms-animation-fill-mode: both;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	animation-delay: .2s;
 	animation-timing-function: ease;
 	animation-fill-mode: both;
@@ -739,17 +739,17 @@ body {
 
 @-webkit-keyframes bounceInUp {
 	0% {
-		opacity: 0;
+		opacity: 1;
 		-webkit-transform: translateY(1000px);
 		transform: translateY(1000px)
 	}
 	30% {
-		opacity: 0.2;
+		opacity: 0.4;
 		-webkit-transform: translateY(500px);
 		transform: translateY(500px)
 	}
 	60% {
-		opacity: 0.5;
+		opacity: 0.6;
 		-webkit-transform: translateY(-15px);
 		transform: translateY(-15px)
 	}
@@ -765,29 +765,18 @@ body {
 }
 @keyframes bounceInUp {
 	0% {
-		opacity: 0;
-		-webkit-transform: translateY(1000px);
-		-ms-transform: translateY(1000px);
-		transform: translateY(1000px)
-	}
-	30% {
 		opacity: 0.2;
-		-webkit-transform: translateY(500px);
-		-ms-transform: translateY(500px);
-		transform: translateY(500px)
+		-webkit-transform: translateY(30px);
+		-ms-transform: translateY(30px);
+		transform: translateY(30px)
 	}
 	60% {
-		opacity: 0.5;
-		-webkit-transform: translateY(-15px);
-		-ms-transform: translateY(-15px);
-		transform: translateY(-15px)
-	}
-	80% {
-		opacity: 0.8;	
+		opacity: 0.8;
 		-webkit-transform: translateY(5px);
 		-ms-transform: translateY(5px);
 		transform: translateY(5px)
 	}
+	
 	100% {
 		opacity: 1;	
 		-webkit-transform: translateY(0);
