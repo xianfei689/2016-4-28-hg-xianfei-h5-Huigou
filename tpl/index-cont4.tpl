@@ -3,7 +3,7 @@
 
 	<img src="img/home/lg4.png" class="lg4bg">
 
-	<img src="img/home/up.png" class="up-img">
-	<p class="lg1_ct5">上拉更精彩</p>
+	<img src="img/home/up.png" class="up-img footer_up">
+	<p class="lg1_ct5 footer_up">上拉更精彩</p>
 
 </div>

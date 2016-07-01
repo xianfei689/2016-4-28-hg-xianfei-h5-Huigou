@@ -396,16 +396,48 @@ function _load_animate_cavans(idx) {
 			};
 		case 2:
 			{
+				var $head = $("#login3").find(".lg3_ani_ct1");
+				$head.addClass('rotateInUpRight animated');
+				setTimeout(function() {
+					$head.removeClass('rotateInUpRight animated');
+				}, 1000);
 
-
+				var $footer = $('#login3').find(".footer_up");
+				$footer.addClass('bounceInUp animated infinite');
+				setTimeout(function() {
+					$footer.removeClass('bounceInUp animated infinite');
+				}, 1000000);
 				break;
 			};
 		case 3:
 			{
+				//aaa
+				var $head = $('#login4').find(".titile");
+				$head.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$head.removeClass('bounceInLeft animated');
+				}, 1000);
+
+				var $footer = $('#login4').find(".footer_up");
+				$footer.addClass('bounceInUp animated infinite');
+				setTimeout(function() {
+					$footer.removeClass('bounceInUp animated infinite');
+				}, 1000000);
+
 				break;
 			};
 		case 4:
 			{
+				var $head = $('#login5').find(".titile");
+				$head.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$head.removeClass('bounceInLeft animated');
+				}, 1000);
+				var $footer = $('#login5').find(".footer_up");
+				$footer.addClass('bounceInUp animated infinite');
+				setTimeout(function() {
+					$footer.removeClass('bounceInUp animated infinite');
+				}, 1000000);
 				break;
 			};
 		default:
