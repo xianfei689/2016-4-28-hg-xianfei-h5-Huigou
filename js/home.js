@@ -570,9 +570,9 @@ function _load_insidePage_animate_cavans(idx) {
 					$head.removeClass('bounceInLeft animated');
 				}, 1000);
 
-				$img.addClass('flip animated infinite');
+				$img.addClass('rollIn animated ');
 				setTimeout(function() {
-					$img.removeClass('flip animated infinite');
+					$img.removeClass('rollIn animated ');
 				}, 1000);
 
 
