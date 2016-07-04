@@ -118,6 +118,8 @@ define(function(require, exports, module) {
 																},
 																onslidechange: function(idx) {
 																	$("#login2").find(".lg2_cont").hide();	
+																	$("#login4").find(".lg4bg").hide();
+																	$("#login5").find(".lg5an1").hide();	
 																	setTimeout(_load_animate_cavans(idx),1000);
 																}
 															});
@@ -423,7 +425,15 @@ function _load_animate_cavans(idx) {
 				setTimeout(function() {
 					$footer.removeClass('bounceInUp animated infinite');
 				}, 1000000);
+				setTimeout(function(){
+					var $img = $('#login4').find(".lg4bg").show();
+					$img.addClass('bounceInDown animated');
+					setTimeout(function() {
+						$img.removeClass('bounceInDown animated');
+					}, 1000);
+				},1000);
 
+				
 				break;
 			};
 		case 4:
@@ -438,6 +448,13 @@ function _load_animate_cavans(idx) {
 				setTimeout(function() {
 					$footer.removeClass('bounceInUp animated infinite');
 				}, 1000000);
+				setTimeout(function(){
+						var $img = $("#login5").find(".lg5an1").show();
+						$img.addClass('flip animated');
+						setTimeout(function() {
+							$img.removeClass('flip animated');
+						}, 1000);
+				},1000);
 				break;
 			};
 		default:
