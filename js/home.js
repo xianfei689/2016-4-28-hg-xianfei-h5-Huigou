@@ -512,17 +512,30 @@ function _load_insidePage_animate_cavans(idx) {
 				setTimeout(function() {
 					$head.removeClass('bounceInLeft animated');
 				}, 1000);
-				
+
 				var $img = $("#STEP_1").find(".container");
 				$img.addClass('rubberBand animated');
 				setTimeout(function() {
 					$img.removeClass('rubberBand animated');
 				}, 1000);
-				console.log(111111);
 				break;
 			};
 		case 2:
 			{
+
+				var $head = $("#STEP_2").find(".step2_ani1");
+				var $img1 = $("#STEP_2").find(".step2_ani2");
+				$head.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$head.removeClass('bounceInLeft animated');
+				}, 1000);
+
+				$img1.addClass('wobble animated');
+				setTimeout(function() {
+					$img1.removeClass('wobble animated');
+				}, 1000);
+
+
 				console.log(222222);
 				break;
 			};
