@@ -231,7 +231,7 @@ define(function(require, exports, module) {
 								if (intr)
 									$("#pullImg").hide();
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((intr)); //参数为true代表没有更多数据了。	
-								if (change==1) {
+								if (change == 1) {
 									_load_insidePage_animate_cavans(index);
 									change++;
 								}
@@ -250,7 +250,7 @@ define(function(require, exports, module) {
 							});
 						}
 						$("#pullrefresh").show();
-						
+
 						load.done();
 
 					});
@@ -534,8 +534,6 @@ function _load_insidePage_animate_cavans(idx) {
 					$img1.removeClass('wobble animated');
 				}, 1000);
 
-
-				console.log(222222);
 				break;
 			};
 		case 3:
@@ -553,10 +551,6 @@ function _load_insidePage_animate_cavans(idx) {
 				setTimeout(function() {
 					$img.removeClass('fadeInDown animated');
 				}, 1000);
-
-
-				console.log(3333);
-
 
 				break;
 			};
@@ -576,12 +570,15 @@ function _load_insidePage_animate_cavans(idx) {
 				}, 1000);
 
 
-				console.log(444444);
 				break;
 			};
 		default:
 			{
-				console.log(5555);
+				var $cont = $("#STEP_5");
+				$cont.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$cont.removeClass('bounceInLeft animated');
+				}, 1000);
 				break;
 			};
 	}
