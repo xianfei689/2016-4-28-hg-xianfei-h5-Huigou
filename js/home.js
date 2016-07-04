@@ -553,7 +553,7 @@ function _load_insidePage_animate_cavans(idx) {
 				setTimeout(function() {
 					$img.removeClass('fadeInDown animated');
 				}, 1000);
-				
+
 
 				console.log(3333);
 
@@ -562,6 +562,20 @@ function _load_insidePage_animate_cavans(idx) {
 			};
 		case 4:
 			{
+				var $head = $("#STEP_4").find(".titile");
+				var $img = $("#scimg").find("img");
+
+				$head.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$head.removeClass('bounceInLeft animated');
+				}, 1000);
+
+				$img.addClass('flip animated infinite');
+				setTimeout(function() {
+					$img.removeClass('flip animated infinite');
+				}, 1000);
+
+
 				console.log(444444);
 				break;
 			};
