@@ -164,14 +164,13 @@ define(function(require, exports, module) {
 
 			index == undefined ? (index = 0) : ('');
 			$("#pullrefresh").hide();
-			$("#back").show();
 
 			$("#back").css("visibility", "visible").unbind().bind("touchstart", function() {
 				$(".Stepcont").hide().eq(index).hide();
 				$("#pullrefresh").hide();
 				$("#iSlider-wrapper").show();
-				$("#back").hide();
-
+				$("#back").css("visibility", "hidden");
+				$("#popover").hide();
 			});
 
 			// zhou         _load_insidePage_animate_cavans()
@@ -541,6 +540,21 @@ function _load_insidePage_animate_cavans(idx) {
 			};
 		case 3:
 			{
+				var $head = $("#STEP_3").find(".titile");
+				var $img = $("#STEP_3").find(".productImg");
+
+
+				$head.addClass('bounceInLeft animated');
+				setTimeout(function() {
+					$head.removeClass('bounceInLeft animated');
+				}, 1000);
+
+				$img.addClass('fadeInDown animated');
+				setTimeout(function() {
+					$img.removeClass('fadeInDown animated');
+				}, 1000);
+				
+
 				console.log(3333);
 
 
