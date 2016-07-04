@@ -71,6 +71,13 @@ html, body {
 	z-index: 999;
 	overflow: hidden;
 }
+#pullImg{
+	position: absolute;
+    bottom: 5px;
+    text-align: center;
+    width: 69px;
+    left: 42%;
+}
 #head span {
 	color: #fff;
 	font-size: 15px;
@@ -708,10 +715,10 @@ body {
 	margin-top: 55px;
 }
 #pullrefresh .up-img {
-	position: absolute;
-	bottom: 32px;
-	left: 47%;
-	width: 20px;
+	    position: absolute;
+    bottom: 32px;
+    left: 31%;
+    width: 20px;
 }
 #pullrefresh .lg1_ct5 {
 	position: absolute;

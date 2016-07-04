@@ -1,5 +1,5 @@
-		<div class="titile">{{getHomeTitle this}}</div>
-		<p class="comp-cont1">
+		<div class="titile step1_ani">{{getHomeTitle this}}</div>
+		<p class="comp-cont1 step1_ani">
 			浙江汇购科技股份有限公司成立于2009年9月，注册资金3000万元人民币，注册地为杭州国家高新技术产业开发区(滨江）。为现代高科技类金融服务型企业。公司主要以积分为纽带，以运营服务为主导，以网络、新媒体推广为手段，以自有核心技术为基础、以积分互通联盟为方向、以大数据分析为依托，打造新型积分汇聚与分享平台，满足客户积分增值与综合应用的服务目标，为我国客户忠诚度建设提供基础保障。
 		</p>
 		<div class="comp-cont2" >
