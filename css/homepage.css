@@ -15,7 +15,14 @@ html, body {
 .disNon {
 	display: none;
 }
-
+#ani_ct2{
+	border-top: 1px solid #8A8A8A;
+	width: 80%;
+    margin-left: 10%;
+}
+#login1 .ani_ct1,#login1 .ani_ct3{
+	visibility: hidden;
+}
 /*common css end*/
 
 /*mui & webui 兼容性bug解决*/
@@ -162,7 +169,7 @@ html, body {
 	font-size: 28px;
 	color: #fff;
 	font-weight: bold;
-	border-bottom: 1px solid #8A8A8A;
+	
 	margin: 0 37px;
 	padding-bottom: 12.5px;
 }

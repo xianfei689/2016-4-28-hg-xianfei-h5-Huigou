@@ -120,6 +120,8 @@ define(function(require, exports, module) {
 																	$("#login2").find(".lg2_cont").hide();
 																	$("#login4").find(".lg4bg").hide();
 																	$("#login5").find(".lg5an1").hide();
+																	$('#login1').find(".ani_ct1").css("visibility", "hidden");
+																	$('#login1').find(".ani_ct3").css("visibility", "hidden");
 																	setTimeout(_load_animate_cavans(idx), 1000);
 																}
 															});
@@ -173,7 +175,6 @@ define(function(require, exports, module) {
 				$("#popover").hide();
 			});
 
-			// zhou         _load_insidePage_animate_cavans()
 			//这个逻辑 判断模块元素是否加载过模板[如果加载过,那么只要进行显示隐藏控制;如果没有,那么加载]
 			if ($(".Stepcont").eq(index).html() != "") {
 				$(".Stepcont").hide().eq(index).show();
@@ -367,16 +368,31 @@ function _load_animate_cavans(idx) {
 	switch (Number(idx)) {
 		case 0:
 			{
-				var $footer = $("#login1").find(".footer_up");
-				var $animate = $('#login1').find(".ani_ct1");
+				var $footer = $('#login1').find(".footer_up");
+				var $contUp = $('#login1').find(".ani_ct1");
+				var $line = $("#ani_ct2");
+				var $contDown = $('#login1').find(".ani_ct3");
 				$footer.addClass('bounceInUp animated infinite');
 				setTimeout(function() {
 					$footer.removeClass('bounceInUp animated infinite');
 				}, 1000000);
-				$animate.addClass('bounceInLeft animated');
+				$line.addClass('bounceInLeft animated');
 				setTimeout(function() {
-					$animate.removeClass('bounceInLeft animated');
+					$line.removeClass('bounceInLeft animated');
 				}, 2000);
+				setTimeout(function() {
+					$contUp.css("visibility", "visible");
+					$contDown.css("visibility", "visible");
+					$contUp.addClass('fadeInUp animated');
+					setTimeout(function() {
+						$contUp.removeClass('fadeInUp animated');
+					}, 2000);
+					$contDown.addClass('fadeInDown animated');
+					setTimeout(function() {
+						$contDown.removeClass('fadeInDown animated');
+					}, 2000);
+				}, 1000);
+
 				break;
 			};
 
