@@ -809,8 +809,8 @@ body {
 	animation-name: bounceInUp
 }
 
-#login2 .lg2_cont{
-	display: none;
+#login2 .lg2_content{
+	visibility: hidden;
 }
 #login4 .lg4bg{
 	display: none;

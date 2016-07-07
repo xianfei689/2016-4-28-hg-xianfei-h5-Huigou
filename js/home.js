@@ -117,7 +117,8 @@ define(function(require, exports, module) {
 																	/*alert(1111);*/
 																},
 																onslidechange: function(idx) {
-																	$("#login2").find(".lg2_cont").hide();
+																	$("#login2").find(".lg2_content").css("visibility", "hidden");
+
 																	$("#login4").find(".lg4bg").hide();
 																	$("#login5").find(".lg5an1").hide();
 																	$('#login1').find(".ani_ct1").css("visibility", "hidden");
@@ -400,7 +401,10 @@ function _load_animate_cavans(idx) {
 			{
 				var $cont = $("#login2").find(".titile");
 				var $footer = $('#login2').find(".footer_up");
-				var $img = $("#login2").find(".lg2_ani_ct1");
+				var $img1 = $("#login2").find(".lg2_ani_ct1");
+				var $img2 = $("#login2").find(".lg2_ani_ct2");
+				var $img3 = $("#login2").find(".lg2_ani_ct3");
+				var $img4 = $("#login2").find(".lg2_ani_ct4");
 				$cont.addClass('bounceInLeft animated');
 				setTimeout(function() {
 					$cont.removeClass('bounceInLeft animated');
@@ -408,15 +412,38 @@ function _load_animate_cavans(idx) {
 				$footer.addClass('bounceInUp animated infinite');
 				setTimeout(function() {
 					$footer.removeClass('bounceInUp animated infinite');
-				}, 1000000);
+				}, 10000);
 				setTimeout(function() {
-					$("#login2").find(".lg2_cont").show();
-					$img.addClass('rotateIn animated');
+					$("#login2").find(".lg2_ani_ct1").css("visibility","visible");
+					$img1.addClass('rotateIn animated');
 					setTimeout(function() {
-						$img.removeClass('rotateIn animated');
+						$img1.removeClass('rotateIn animated');
 					}, 1000);
-				}, 500);
+				}, 1000);
+				setTimeout(function() {
+					$("#login2").find(".lg2_ani_ct2").css("visibility","visible");
+					$img2.addClass('rotateIn animated');
+					setTimeout(function() {
+						$img2.removeClass('rotateIn animated');
+					}, 1000);
+				},1300);
+				setTimeout(function() {
+					$("#login2").find(".lg2_ani_ct3").css("visibility","visible");
+					$img3.addClass('rotateIn animated');
+					setTimeout(function() {
+						$img3.removeClass('rotateIn animated');
+					}, 1000);
+				},1600);
+				setTimeout(function() {
+					$("#login2").find(".lg2_ani_ct4").css("visibility","visible");
+					$img4.addClass('rotateIn animated');
+					setTimeout(function() {
+						$img4.removeClass('rotateIn animated');
+					}, 1000);
+				},1900);
 
+				
+					
 				break;
 			};
 		case 2:
@@ -522,6 +549,7 @@ function _load_insidePage_animate_cavans(idx) {
 
 		case 1:
 			{
+
 				var $head = $('#STEP_1').find(".step1_ani");
 				$head.addClass('bounceInLeft animated');
 				setTimeout(function() {
