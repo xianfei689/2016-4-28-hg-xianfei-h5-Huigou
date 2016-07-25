@@ -118,7 +118,7 @@ define(function(require, exports, module) {
 																},
 																onslidechange: function(idx) {
 																	$("#login2").find(".lg2_content").css("visibility", "hidden");
-
+																	$("#login3").find(".lg2_m").hide();
 																	$("#login4").find(".lg4bg").hide();
 																	$("#login5").find(".lg5an1").hide();
 																	$('#login1').find(".ani_ct1").css("visibility", "hidden");
@@ -447,12 +447,21 @@ function _load_animate_cavans(idx) {
 				break;
 			};
 		case 2:
-			{
+			{	
 				var $head = $("#login3").find(".lg3_ani_ct1");
 				$head.addClass('rotateInUpRight animated');
 				setTimeout(function() {
 					$head.removeClass('rotateInUpRight animated');
 				}, 1000);
+
+				var $img = $("#login3").find(".lg2_m");
+				setTimeout(function(){
+					$img.show().addClass('rotateInUpRight animated');
+					setTimeout(function() {
+						$head.removeClass('rotateInUpRight animated');
+					}, 1000);	
+				},1000);
+
 
 				var $footer = $('#login3').find(".footer_up");
 				$footer.addClass('bounceInUp animated infinite');

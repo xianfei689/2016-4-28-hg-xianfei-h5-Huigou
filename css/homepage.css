@@ -158,6 +158,7 @@ html, body {
 	background-size: contain;
 	background-position-y: -28px;
 }
+
 .lg1_ct1 {
 	font-size: 13px;
 	color: #fff;
@@ -286,6 +287,10 @@ html, body {
 	color: #fff;
 	margin-left: 38px;
 }
+
+#login3 .footer_up{
+	bottom: 100px;
+}
 #login3 .lg3_c1 {
 	margin-top: 10px;
 	margin-bottom: 13px;
@@ -327,6 +332,34 @@ html, body {
 	font-size: 10px;
 	text-align: center;
 	margin-left: 0;
+}
+#login3 .lg2_m1{
+	position: absolute;
+    z-index: 50;
+    bottom: 21%;
+    right: 4%;
+}
+#login3 .lg2_m2{
+	position: absolute;
+	z-index: 51;
+    bottom: 24%;
+    right: 7%;
+}
+#login3 .lg2_m3{
+	position: absolute;
+	z-index: 52;
+	bottom: 27%;
+	    right: 11%;
+}
+#login3 .lg2_m4{
+	position: absolute;
+	z-index: 53;
+	bottom: 30%;
+	    right: 15%;
+}
+
+#login3 .lg2_m{
+	width:40%;
 }
 #login4  .lg4_c1 {
 	margin-bottom: 9px;
@@ -818,3 +851,4 @@ body {
 #login5 .lg5an1{
 	display: none;
 }
+

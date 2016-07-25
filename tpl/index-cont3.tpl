@@ -10,6 +10,11 @@
 	<p class="lg3_c5 lg3_ani_ct1">
 		戳我下载>
 	</p>
+
+	<img src="img/home/p1.png"  class="lg2_m1 lg2_m">
+	<img src="img/home/p2.png"  class="lg2_m2 lg2_m">
+	<img src="img/home/p3.png"  class="lg2_m3 lg2_m">
+	<img src="img/home/p4.png"  class="lg2_m4 lg2_m">
 	<img src="img/home/up.png"  class="up-img footer_up">
 	<p class="lg1_ct5 footer_up">上拉更精彩</p>
 </div>
