@@ -15,7 +15,7 @@
 				“2009年作为类高新企业，落户杭州，一年之内签约一二线品牌供应商数百家，合作伙伴遍布金融、航空和电
 信等领域。”...
 			</p>
-			<a class="readAll" href="http://beixiao.baijia.baidu.com/article/350831?qq-pf-to=pcqq.c2c">阅读全文></a>
+			<a class="readAll" onclick="window.location.href='http://beixiao.baijia.baidu.com/article/350831?qq-pf-to=pcqq.c2c'">阅读全文></a>
 
 		</div>
 	</div>
@@ -35,7 +35,7 @@
 		<p class="news">
 				2月3日消息，全国中小企业股份转让系统公告显示，汇购科技的挂牌申请获得批准，并于今日公开转让，证券代码为：835795...
 			</p>	
-			<a class="readAll" href="http://www.howbuy.com/news/2016-02-03/4025622.html">阅读全文></a>
+			<a class="readAll" onclick="window.location.href='http://www.howbuy.com/news/2016-02-03/4025622.html'" >阅读全文></a>
 
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 			<p class="news">
 				　提问：有一个问题不太明白。举个例子，我现在买机票优先选择国航。如果国航加入你这个积分联盟，对于我来说买哪个航空公司没有那么重要...
 			</p>
-			<a class="readAll" href="http://sc.stock.cnfol.com/gppdgdzx/20151118/21805234.shtml">阅读全文></a>
+			<a class="readAll" onclick="window.location.href='http://sc.stock.cnfol.com/gppdgdzx/20151118/21805234.shtml'" >阅读全文></a>
 
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 			<p class="news">
 			　新三板助力中国互联网企业腾飞，首创2015互联网投资峰会11月18日在北京金融街(000402,股吧)威斯汀大酒店举办，上海...
 			</p>
-			<a class="readAll" href="http://stock.hexun.com/2015-11-18/180651799.html">阅读全文></a>
+			<a class="readAll" onclick="window.location.href='http://stock.hexun.com/2015-11-18/180651799.html'" >阅读全文></a>
 
 		</div>
 	</div>
