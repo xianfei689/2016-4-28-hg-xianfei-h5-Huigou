@@ -270,13 +270,12 @@ html, body {
 .lg2_cont img {
 	display: inline-block;
 	width: 93px;
-	margin-bottom: 11.5px;
 }
 .lg2_cont  p {
 	font-size: 11px;
 	color: #48deb2;
 	margin-top: 11.5px;
-	margin-bottom: 40px;
+	    margin-bottom: 24px;
 }
 #iSlider-wrapper .lg2_change {
 }
@@ -373,7 +372,7 @@ html, body {
 	background-color: #1F1E24;
 }
 #login5 .lg5bg1 {
-	width: 80%;
+	width: 78%;
 }
 #login5 .lg5bg2 {
 	margin-top: 15px;
