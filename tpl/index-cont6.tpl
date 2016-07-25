@@ -1,6 +1,7 @@
 <div id="login6"  class="lgct">
 
-	<img src="img/home/bag1.png" class="lg6mg1">
+	
+	<div style="width:100%;height:70%;border:#ccc solid 1px;font-size:12px" id="map"></div>
 	<div class="lg6_cont">
 		<p class="lg6p">浙江汇购科技股份有限公司</p>
 		<p class="lg6_cont1">
