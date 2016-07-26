@@ -219,7 +219,7 @@ define(function(require, exports, module) {
 								for (var i = cells.length, len = i + 3; i < len; i++) {
 
 									if (count < newsLen) {
-										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">' + '<span class="new_year">' + json.news[count].month + '</span>' + '<span class="new_day">' + json.news[count].day + '</span></div><div class="new_right">' + '<p class="news_t">' + json.news[count].titile + '</p>' + '<p class="news_day">' + json.news[count].from + '</p>' + '<p class="news">' + json.news[count].cont + '</p>' + '<a class="readAll" href="' + json.news[count].url + '">阅读全文</a></div></div>';
+										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">' + '<span class="new_year">' + json.news[count].month + '</span>' + '<span class="new_day">' + json.news[count].day + '</span></div><div class="new_right">' + '<p class="news_t">' + json.news[count].titile + '</p>' + '<p class="news_day">' + json.news[count].from + '</p>' + '<a class="news" href="' + json.news[count].url + '">' + json.news[count].cont + '</a><br/>' + '<a class="readAll" href="' + json.news[count].url + '">阅读全文</a></div></div>';
 										$(table).append(html);
 										intr = false;
 										if (count == newsLen - 1)
