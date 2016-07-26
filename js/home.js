@@ -11,7 +11,7 @@
  */
 define(function(require, exports, module) {
 
-
+	var itemIndex = 0;
 	var home = {
 		init: function() {
 			//初始化HandleBar是帮助类
@@ -184,12 +184,14 @@ define(function(require, exports, module) {
 				load.done();
 				_load_insidePage_animate_cavans(index);
 			} else {
+				var JsonData;
 				//上拉加载模板特殊模块
 				if (index == 0) {
 					$(".Stepcont").hide();
 					$("#pullrefresh").show();
 					Rose.ajax.getJson("json/news.json", '', function(json, status) {
 						var intr = false;
+						JsonData = json;
 						var newsLen = json.news.length;
 						var count = 0;
 						mui.init({
@@ -219,9 +221,10 @@ define(function(require, exports, module) {
 								for (var i = cells.length, len = i + 3; i < len; i++) {
 
 									if (count < newsLen) {
-										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">' + '<span class="new_year">' + json.news[count].month + '</span>' + '<span class="new_day">' + json.news[count].day + '</span></div><div class="new_right">' + '<p class="news_t">' + json.news[count].titile + '</p>' + '<p class="news_day">' + json.news[count].from + '</p>' + '<a class="news" href="' + json.news[count].url + '">' + json.news[count].cont + '</a><br/>' + '<a class="readAll" href="' + json.news[count].url + '">阅读全文</a></div></div>';
+										var html = '<div class="new_ct"><div class="new_left"><img src="img/homedesc/com/ro.png" class="new_img"><img src="img/homedesc/com/vline.png" class="new_img1">' + '<span class="new_year">' + json.news[count].month + '</span>' + '<span class="new_day">' + json.news[count].day + '</span></div><div class="new_right">' + '<p class="news_t">' + json.news[count].titile + '</p>' + '<p class="news_day">' + json.news[count].from + '</p>' + '<a class="news" href="' + json.news[count].url + '">' + json.news[count].cont + '</a><br/>' + '<a class="readAll" index='+itemIndex+'>阅读全文</a></div></div>';
 										$(table).append(html);
 										intr = false;
+										itemIndex++;
 										if (count == newsLen - 1)
 											intr = true;
 
@@ -230,7 +233,12 @@ define(function(require, exports, module) {
 									}
 									count++;
 								}
-
+								$("#pullrefresh").find(".readAll").unbind("").bind("touchstart",function(e){
+												e.preventDefault();
+												var index = Number($(this).attr("index"));
+												var url = JsonData.news[index].url;
+												window.location.href = url;
+								});
 								if (intr)
 									$("#pullImg").hide();
 								mui('#pullrefresh').pullRefresh().endPullupToRefresh((intr)); //参数为true代表没有更多数据了。	
@@ -258,8 +266,7 @@ define(function(require, exports, module) {
 
 					});
 
-
-
+				
 				} else {
 
 					var htmlStr = "tpl/homepage-desc-cont" + index + ".tpl";
