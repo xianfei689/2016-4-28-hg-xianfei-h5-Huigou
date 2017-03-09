@@ -4,7 +4,7 @@
  * @AuthorHTL                                                xianfei
  * @DateTime  2016-06-23T08:34:33+0800
  */
-var  basepath = "/hg_phone_xianfei_v2.1/";
+var  basepath = "/2016-4-28-hg-xianfei-h5-Huigou/";
 var timeStamp = '$1?ver=' + new Date().getTime();
 seajs.config({
   'map': [
