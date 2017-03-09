@@ -8,7 +8,7 @@
 // var  basepath = "";
 //  conf [1:测试环境; 0 :本地环境]
 var conf = 0;
-var srcPref = ["2016-4-28-hg-xianfei-h5-Huigou",""];
+var srcPref = ["/2016-4-28-hg-xianfei-h5-Huigou",""];
 var timeStamp = '$1?ver=' + new Date().getTime();
 seajs.config({
   'map': [
